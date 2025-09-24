@@ -2,6 +2,13 @@ import { atom } from "jotai";
 
 // Get initial token from localStorage
 const getInitialToken = (): string | null => {
+  // First check for environment variable
+  const envToken = import.meta.env.VITE_TAVUS_API_KEY;
+  if (envToken && envToken !== 'your_tavus_api_key_here') {
+    return envToken;
+  }
+  
+  // Fall back to localStorage
   const savedToken = localStorage.getItem('tavus-token');
   return savedToken || null;
 };
