@@ -14,13 +14,7 @@ import { useAtom, useAtomValue } from "jotai";
 import { screenAtom } from "@/store/screens";
 import { Button } from "@/components/ui/button";
 import { endConversation } from "@/api/endConversation";
-import {
-  MicIcon,
-  MicOffIcon,
-  VideoIcon,
-  VideoOffIcon,
-  PhoneIcon,
-} from "lucide-react";
+import { Mic as MicIcon, MicOff as MicOffIcon, Video as VideoIcon, VideoOff as VideoOffIcon, Phone as PhoneIcon } from "lucide-react";
 import {
   clearSessionTime,
   getSessionTime,
