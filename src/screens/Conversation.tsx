@@ -79,29 +79,35 @@ export const Conversation: React.FC = () => {
     const interval = setInterval(() => {
       const time = getSessionTime();
       if (time === TIME_LIMIT - 60) {
-        daily?.sendAppMessage({
-          message_type: "conversation",
-          event_type: "conversation.echo",
-          conversation_id: conversation?.conversation_id,
-          properties: {
-            modality: "text",
-            text:
-              timeToGoPhrases[Math.floor(Math.random() * 3)] ??
-              timeToGoPhrases[0],
+        daily?.sendAppMessage(
+          {
+            message_type: "conversation",
+            event_type: "conversation.echo",
+            conversation_id: conversation?.conversation_id,
+            properties: {
+              modality: "text",
+              text:
+                timeToGoPhrases[Math.floor(Math.random() * 3)] ??
+                timeToGoPhrases[0],
+            },
           },
-        });
+          "*"
+        );
       }
       if (time === TIME_LIMIT - 10) {
-        daily?.sendAppMessage({
-          message_type: "conversation",
-          event_type: "conversation.echo",
-          conversation_id: conversation?.conversation_id,
-          properties: {
-            modality: "text",
-            text:
-              outroPhrases[Math.floor(Math.random() * 3)] ?? outroPhrases[0],
+        daily?.sendAppMessage(
+          {
+            message_type: "conversation",
+            event_type: "conversation.echo",
+            conversation_id: conversation?.conversation_id,
+            properties: {
+              modality: "text",
+              text:
+                outroPhrases[Math.floor(Math.random() * 3)] ?? outroPhrases[0],
+            },
           },
-        });
+          "*"
+        );
       }
       if (time >= TIME_LIMIT) {
         leaveConversation();
@@ -118,8 +124,8 @@ export const Conversation: React.FC = () => {
       daily
         ?.join({
           url: conversation.conversation_url,
-          startVideoOff: false,
-          startAudioOff: true,
+          video: true,
+          audio: false,
         })
         .then(() => {
           daily?.setLocalVideo(true);
