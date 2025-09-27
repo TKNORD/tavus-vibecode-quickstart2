@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@daily-co/daily-js": "^0.75.0",
-    "@daily-co/daily-react": "^0.41.0",
+    "@daily-co/daily-react": "^0.42.0",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
