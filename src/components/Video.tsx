@@ -19,7 +19,7 @@ export default function Video({
       })}
     >
       <DailyVideo
-        mirror={id === "local"}
+        automirror={id === "local"}
         sessionId={id}
         type="video"
         className={cn("size-full object-cover", tileClassName, {

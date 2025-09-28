@@ -118,8 +118,8 @@ export const Conversation: React.FC = () => {
       daily
         ?.join({
           url: conversation.conversation_url,
-          video: true,
-          audio: false,
+          startVideoOff: false,
+          startAudioOff: true,
         })
         .then(() => {
           daily?.setLocalVideo(true);

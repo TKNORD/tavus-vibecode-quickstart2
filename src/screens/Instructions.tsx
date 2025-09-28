@@ -86,7 +86,10 @@ export const Instructions: React.FC = () => {
       
       let micDeviceId = currentMic?.device?.deviceId;
       if (!micDeviceId) {
-        const res = await daily?.startCamera();
+        const res = await daily?.startCamera({
+          video: true,
+          audio: true
+        });
         // @ts-expect-error deviceId exists in the MediaDeviceInfo
         const isDefaultMic = res?.mic?.deviceId === "default";
         // @ts-expect-error deviceId exists in the MediaDeviceInfo
