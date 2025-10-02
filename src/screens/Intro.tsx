@@ -4,13 +4,10 @@ import { useAtom } from "jotai";
 import { screenAtom } from "@/store/screens";
 import { Unlock } from "lucide-react";
 import AudioButton from "@/components/AudioButton";
-import { apiTokenAtom } from "@/store/tokens";
-import { Input } from "@/components/ui/input";
 import gloriaVideo from "@/assets/video/gloria.mp4";
 
 export const Intro: React.FC = () => {
   const [, setScreenState] = useAtom(screenAtom);
-  const [token, setToken] = useAtom(apiTokenAtom);
 
   const handleClick = () => {
     setScreenState({ currentScreen: "instructions" });
