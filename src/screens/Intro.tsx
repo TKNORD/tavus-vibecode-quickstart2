@@ -2,7 +2,7 @@ import { AnimatedWrapper } from "@/components/DialogWrapper";
 import React from "react";
 import { useAtom } from "jotai";
 import { screenAtom } from "@/store/screens";
-import { Unlock } from "lucide-react";
+import { Clock as Unlock } from "lucide-react";
 import AudioButton from "@/components/AudioButton";
 import gloriaVideo from "@/assets/video/gloria.mp4";
 
